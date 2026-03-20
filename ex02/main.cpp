@@ -1,0 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/20 01:54:56 by aboumall          #+#    #+#             */
+/*   Updated: 2026/03/20 02:34:17 by aboumall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+
+#include <cstdlib>
+
+Base* generate(void)
+{
+    int random = rand() % 3;
+    if (random == 0)
+        return new A();
+    else if (random == 1)
+        return new B();
+    else
+        return new C();
+}
+
+void identify(Base* p)
+{
+    if (dynamic_cast<A*>(p))
+        std::cout << "A" << std::endl;
+    else if (dynamic_cast<B*>(p))
+        std::cout << "B" << std::endl;
+    else if (dynamic_cast<C*>(p))
+        std::cout << "C" << std::endl;
+    else
+        std::cout << "Unknown type" << std::endl;
+}
+
+#include <typeinfo>
+
+void identify(Base& p)
+{
+    try
+    {
+        (void)dynamic_cast<A&>(p);
+        std::cout << "A" << std::endl;
+    }
+    catch (std::bad_cast&) {}
+    
+    try
+    {
+        (void)dynamic_cast<B&>(p);
+        std::cout << "B" << std::endl;
+    }
+    catch (std::bad_cast&) {}
+    
+    try
+    {
+        (void)dynamic_cast<C&>(p);
+        std::cout << "C" << std::endl;
+    }
+    catch (std::bad_cast&) {}
+}
+
+int main()
+{
+    Base* base = generate();
+    std::cout << "Identify by pointer: ";
+    identify(base);
+    std::cout << "Identify by reference: ";
+    identify(*base);
+    delete base;
+    return 0;
+}
