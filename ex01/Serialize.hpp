@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 01:44:52 by aboumall          #+#    #+#             */
-/*   Updated: 2026/03/20 02:30:32 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/03/24 16:38:11 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SERIALIZE_HPP
 
 #include <iostream>
+#include <stdint.h>
 
 struct Data
 {
@@ -25,8 +26,8 @@ struct Data
 class Serialize
 {
     private:
-        Serialize() {}
-        ~Serialize() {}
+        Serialize();
+        ~Serialize();
         Serialize(const Serialize&);
         Serialize& operator=(const Serialize&);
         

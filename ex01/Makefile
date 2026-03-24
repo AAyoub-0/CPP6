@@ -6,13 +6,13 @@
 #    By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 15:52:18 by aboumall          #+#    #+#              #
-#    Updated: 2026/03/20 01:57:38 by aboumall         ###   ########.fr        #
+#    Updated: 2026/03/24 16:38:33 by aboumall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADERS = Serialization.hpp
+HEADERS = Serialize.hpp
 
-TARGET = serialization
+TARGET = serialize
 
 CXX = c++
 
