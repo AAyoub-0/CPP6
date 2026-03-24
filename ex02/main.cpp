@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 01:54:56 by aboumall          #+#    #+#             */
-/*   Updated: 2026/03/24 16:52:10 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/03/24 19:56:03 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void identify(Base* p)
 		std::cout << "Unknown type" << std::endl;
 }
 
-#include <typeinfo>
-
 void identify(Base& p)
 {
 	try
@@ -60,21 +58,21 @@ void identify(Base& p)
 		(void)dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
 	}
-	catch (std::bad_cast&) {}
+	catch (...) {}
 
 	try
 	{
 		(void)dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
 	}
-	catch (std::bad_cast&) {}
+	catch (...) {}
 
 	try
 	{
 		(void)dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
 	}
-	catch (std::bad_cast&) {}
+	catch (...) {}
 }
 
 int main()
