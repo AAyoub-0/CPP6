@@ -6,12 +6,12 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 01:30:44 by aboumall          #+#    #+#             */
-/*   Updated: 2026/03/11 03:31:44 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/03/24 15:55:08 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-
+#include <iomanip>
 
 static bool printPseudoLiterals(const std::string& literal)
 {
@@ -175,8 +175,8 @@ static int myStoi(const std::string& literal)
 	{
 		int digit = literal[i] - '0';
 		value = value * 10 + digit;
-		 if (value > (INT_MAX - digit) / 10)
-            throw std::out_of_range("Integer overflow");
+		if (value > (INT_MAX - digit) / 10)
+        	throw std::out_of_range("Integer overflow");
 	}
 	return isNegative ? -value : value;
 }
@@ -247,6 +247,12 @@ static double myStod(const std::string& literal)
 	return isNegative ? -value : value;
 }
 
+std::ostream& fixed2(std::ostream& os)
+{
+	std::cout << std::fixed << std::setprecision(1);
+	return os;
+}
+
 void ScalarConverter::convertInt(const std::string& literal)
 {
 	int value = 0;
@@ -272,9 +278,17 @@ void ScalarConverter::convertInt(const std::string& literal)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << value << std::endl;
-	std::cout << "float: " << f_value << "f" << std::endl;
-	std::cout << "double: " << d_value << std::endl;
+	std::cout << fixed2;
+	if (error)
+		std::cout << "float: impossible" << std::endl;
+	else
+		std::cout << "float: " << f_value << "f" << std::endl;
+	if (error)
+		std::cout << "double: impossible" << std::endl;
+	else
+		std::cout << "double: " << d_value << std::endl;
 }
+
 void ScalarConverter::convertFloat(const std::string& literal)
 {
 	float value = 0;
@@ -300,12 +314,17 @@ void ScalarConverter::convertFloat(const std::string& literal)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << i_value << std::endl;
+	std::cout << fixed2;
 	if (error)
 		std::cout << "float: impossible" << std::endl;
 	else
-	std::cout << "float: " << value << "f" << std::endl;
-	std::cout << "double: " << d_value << std::endl;
+		std::cout << "float: " << value << "f" << std::endl;
+	if (error)
+		std::cout << "double: impossible" << std::endl;
+	else
+		std::cout << "double: " << d_value << std::endl;
 }
+
 void ScalarConverter::convertDouble(const std::string& literal)
 {
 	double value = 0;
@@ -331,20 +350,16 @@ void ScalarConverter::convertDouble(const std::string& literal)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << i_value << std::endl;
+	std::cout << fixed2;
 	if (error)
 		std::cout << "float: impossible" << std::endl;
 	else
-	std::cout << "float: " << f_value << "f" << std::endl;
-	if (error)
-		std::cout << "double: impossible" << std::endl;
-	else
+		std::cout << "float: " << f_value << "f" << std::endl;
 	if (error)
 		std::cout << "double: impossible" << std::endl;
 	else
 		std::cout << "double: " << value << std::endl;
 }
-
-
 
 ScalarConverter::ScalarConverter() {}
 ScalarConverter::ScalarConverter(const ScalarConverter& other) { (void)other; }
