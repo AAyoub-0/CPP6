@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 01:27:47 by aboumall          #+#    #+#             */
-/*   Updated: 2026/03/25 16:28:02 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/05/07 18:02:27 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class ScalarConverter
 {
@@ -23,17 +24,7 @@ class ScalarConverter
 		ScalarConverter(const ScalarConverter& other);
 		ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
-	
-		static bool isChar(const std::string& literal);
-		static bool isInt(const std::string& literal);
-		static bool isFloat(const std::string& literal);
-		static bool isDouble(const std::string& literal);
-		static bool isDisplayableChar(int value);
-
-		static void convertChar(const std::string& literal);
-		static void convertInt(const std::string& literal);
-		static void convertFloat(const std::string& literal);
-		static void convertDouble(const std::string& literal);
+		
 	public:
 		static void convert(const std::string& literal);
 

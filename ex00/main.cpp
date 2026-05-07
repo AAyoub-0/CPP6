@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 02:21:32 by aboumall          #+#    #+#             */
-/*   Updated: 2026/03/24 15:57:27 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/05/07 19:22:30 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int main(int argc, char** argv)
 	ScalarConverter::convert("0");
 	std::cout << std::endl;
 	ScalarConverter::convert("42");
+	std::cout << std::endl;
+	ScalarConverter::convert("2147483648");
+	std::cout << std::endl;
+	ScalarConverter::convert("2147483647f");
 	std::cout << std::endl;
 	ScalarConverter::convert("42.0");
 	std::cout << std::endl;
@@ -45,10 +49,6 @@ int main(int argc, char** argv)
 	ScalarConverter::convert("4.2.2f");
 	std::cout << std::endl;
 	ScalarConverter::convert("--42");
-	std::cout << std::endl;
-	ScalarConverter::convert("2147483647");
-	std::cout << std::endl;
-	ScalarConverter::convert("2147483648");
 	std::cout << std::endl;
 	ScalarConverter::convert("");
 	std::cout << std::endl;
