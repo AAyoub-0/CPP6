@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
+/*   By: aayoub <aayoub@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 01:27:47 by aboumall          #+#    #+#             */
-/*   Updated: 2026/05/07 18:02:27 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/05/11 20:06:15 by aayoub           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <limits>
+#include <cstdio>
 
 class ScalarConverter
 {
@@ -24,6 +26,16 @@ class ScalarConverter
 		ScalarConverter(const ScalarConverter& other);
 		ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
+
+		static void convertInt(std::string literal, int& l_int, float& l_float, double& l_double, char& c);
+		static void convertFloat(std::string literal, int& l_int, float& l_float, double& l_double, char& c);
+		static void convertDouble(std::string literal, int& l_int, float& l_float, double& l_double, char& c);
+		static void convertChar(std::string literal, int& l_int, float& l_float, double& l_double, char& c);
+
+		static bool isInt(const std::string& literal);
+		static bool isFloat(const std::string& literal);
+		static bool isDouble(const std::string& literal);
+		static bool isChar(const std::string& literal);
 		
 	public:
 		static void convert(const std::string& literal);
