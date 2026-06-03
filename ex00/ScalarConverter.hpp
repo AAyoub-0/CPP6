@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aayoub <aayoub@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 01:27:47 by aboumall          #+#    #+#             */
-/*   Updated: 2026/05/11 20:06:15 by aayoub           ###   ########.fr       */
+/*   Updated: 2026/06/03 16:03:01 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sstream>
 #include <limits>
 #include <cstdio>
+#include <iomanip>
 
 class ScalarConverter
 {

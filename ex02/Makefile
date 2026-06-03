@@ -6,13 +6,13 @@
 #    By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 15:52:18 by aboumall          #+#    #+#              #
-#    Updated: 2026/03/24 19:55:26 by aboumall         ###   ########.fr        #
+#    Updated: 2026/06/03 16:03:12 by aboumall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 HEADERS = Base.hpp A.hpp B.hpp C.hpp
 
-TARGET = indetify
+TARGET = identify
 
 CXX = c++
 
