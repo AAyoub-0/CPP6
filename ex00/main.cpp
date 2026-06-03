@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aayoub <aayoub@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 02:21:32 by aboumall          #+#    #+#             */
-/*   Updated: 2026/05/11 19:48:53 by aayoub           ###   ########.fr       */
+/*   Updated: 2026/06/03 16:28:55 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(int argc, char** argv)
 {
-	(void)argc;
+/* 	(void)argc;
 	(void)argv;
 	
 	ScalarConverter::convert("0");
@@ -30,7 +30,7 @@ int main(int argc, char** argv)
 	std::cout << std::endl;
 	ScalarConverter::convert("999999999999999999999999999999999999999999.9");
 	std::cout << std::endl;
-	ScalarConverter::convert("2147483647f");
+	ScalarConverter::convert("-2147483650.0f");
 	std::cout << std::endl;
 	ScalarConverter::convert("42.0");
 	std::cout << std::endl;
@@ -61,14 +61,15 @@ int main(int argc, char** argv)
 	ScalarConverter::convert("999999999999999999f");
 	std::cout << std::endl;
 	ScalarConverter::convert("-1");
-	return 0;
+	return 0; */
 
-/* 	if (argc != 2)
+		
+	if (argc != 2)
 	{
 		std::cerr << "Usage: " << argv[0] << " <literal>" << std::endl;
 		return 1;
 	}
 	ScalarConverter::convert(argv[1]);
 	return 0;
- */
+	
 }

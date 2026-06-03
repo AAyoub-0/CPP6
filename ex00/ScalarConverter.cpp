@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 01:30:44 by aboumall          #+#    #+#             */
-/*   Updated: 2026/06/03 16:02:54 by aboumall         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:26:56 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void ScalarConverter::convert(const std::string& literal)
 		std::cout << "char: " << c << std::endl;
 	else
 		std::cout << "char: " << "Non displayable" << std::endl;
-	if (l_int == 0 && (l_float > 0.0f || l_double > 0.0))
+	if (l_int == 0 && (l_float != 0.0f || l_double != 0.0))
 		std::cout << "int: " << "impossible" << std::endl;
 	else
 		std::cout << "int: " << l_int << std::endl;
-	if (l_float == 0.0f && l_double > 0.0)
+	if (l_float == 0.0f && l_double != 0.0)
 		std::cout << "float: " << "impossible" << std::endl;
 	else
 		std::cout << "float: " << l_float << "f" << std::endl;
